@@ -1,0 +1,19 @@
+FROM node:20.20-alpine3.22
+
+WORKDIR /home/app
+
+COPY package*.json ./
+COPY tsconfig*.json ./
+
+RUN npm install
+
+COPY src ./src
+# COPY dist ./dist 
+# we will not doing this to prevent 2 reasons first is because above we are doing npm install and another reason is this project has built in windows os there might chances this project not work on like mac, linux.
+
+
+RUN npm run build
+
+EXPOSE 3000
+
+CMD [ "node", "dist/server.js" ]
