@@ -166,3 +166,19 @@ rad.json
 *.flf
 #Test results file
 TestResults.xml
+
+screenshots
+
+.env
+
+node_modules
+
+notes
+
+notes.txt
+
+*.txt
+
+*.pdf
+
+
