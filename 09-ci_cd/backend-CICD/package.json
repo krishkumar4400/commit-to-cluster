@@ -1,0 +1,24 @@
+{
+  "dependencies": {
+    "@google/genai": "^1.32.0",
+    "@imagekit/nodejs": "^7.1.1",
+    "cors": "^2.8.5",
+    "dotenv": "^17.4.2",
+    "express": "^5.1.0",
+    "imagekit": "^6.0.0",
+    "jsonwebtoken": "^9.0.3",
+    "mongoose": "^8.19.1",
+    "multer": "^2.0.2"
+  },
+  "type": "module",
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "start": "node --env-file=.env server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
