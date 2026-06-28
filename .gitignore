@@ -170,6 +170,8 @@ TestResults.xml
 screenshots
 
 .env
+*.txt
+notes
 
 node_modules
 
