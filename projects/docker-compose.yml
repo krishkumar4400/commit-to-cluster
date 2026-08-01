@@ -7,6 +7,9 @@ services:
       dockerfile: Dockerfile
     ports:
       - "8000:8000"
+    volumes:
+      - ./backend:/home/app
+    command: nodemon server.js
 
   frontend:
     build:

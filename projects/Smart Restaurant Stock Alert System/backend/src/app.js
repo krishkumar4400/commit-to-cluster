@@ -18,6 +18,21 @@ app.use(
 );
 
 // routes
+app.get('/', (req,res) => {
+  return res.status(200).json({
+    message: "Server is running",
+    success: true
+  });
+});
+
+app.get("/api/health", (req, res) => {
+  return res.status(200).json({
+    message: "Server healthy",
+    success: true,
+  });
+});
+
+
 
 
 export default app;

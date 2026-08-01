@@ -1,4 +1,4 @@
-# Smart Restaurant Stock Alert System
+# StockWise: Smart Restaurant Stock Alert System
 
 ## Overview
 
