@@ -1,6 +1,6 @@
 # what is devops
 
-# software development process
+## software development process
 
 ## phases
 
@@ -152,4 +152,48 @@ goal of CI: the goal of ci is to detect defects at very early stage so it is not
 
 ## continuous delivery
 
-continuous delivery is an automated process of 
+continuous delivery is an automated process of delievering code changes to servers quicly and efficiently at an anormous pace.
+
+## Deployment
+
+Deployment is not only delivering softwares to the servers, it is more than that such as:
+
+- server provisioning
+- dependencies
+- conf changes
+- network
+- artifact deploy
+- etc
+
+## Solution for manual deployment to reduce human intervention and error
+
+Automate it:
+
+Every step in deployment should be automated such as:
+
+- server provisioning
+- dependencies
+- conf changes
+- network
+- artifact deploy
+- any other changes
+
+## Automation tools for CD
+
+- Ansible, Puppet, Chef (for system automation)
+- Terraform, cloud formation (for cloud infra automation)
+- Jenkins, Octopus deploy for(ci-cd automation)
+- Helm charts
+- code deploy
+- many more
+
+## Test Automation
+
+- functional
+- load
+- performance
+- db
+- network and security
+- any other test cases
+
+so ops team will write automation code for deployment and testers(QA team) will write automation code for software testing and sync it with developers source code.
