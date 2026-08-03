@@ -1,0 +1,34 @@
+version: "3.7"
+name: "student-app"
+
+services:
+  app:
+    build: .
+    ports:
+      - "8080:8080"
+    networks:
+      - my-network
+    depends_on:
+      - postgres
+
+  postgres:
+    image: postgres:17
+    environment:
+      POSTGRES_USER: krish
+      POSTGRES_PASSWORD: krishAt123
+      POSTGRES_DB: student
+      TZ: Asia/Kolkata
+    ports:
+      - "5439:5432"
+
+    networks:
+      - my-network
+    volumes:
+      - student-app-data:/var/lib/postgresql/data
+
+networks:
+  my-network:
+    driver: bridge
+
+volumes:
+  student-app-data:
