@@ -6,7 +6,17 @@ const app = express();
 app.use(morgan("dev"));
 
 app.get("/", (req, res) => {
-  res.send("Hello Express");
+  let sum = 0;
+  for (let i = 0; i < 1000000; i++) {
+    sum += i;
+  }
+
+  return res.status(200).json({
+    message: "success",
+    success: true,
+    status: "ok",
+    data: sum,
+  });
 });
 
 const port = 4000;
