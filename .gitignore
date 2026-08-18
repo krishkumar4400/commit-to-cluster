@@ -188,3 +188,79 @@ ddc-material-master
 =======
 
 >>>>>>> 2ab72fcaeb9d5796bc711314a0ae05ac08bbbaac
+
+
+node_modules
+.env
+notes.txt
+notes
+# -------------------------
+# Python
+# -------------------------
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+*.egg-info/
+.eggs/
+*.egg
+dist/
+build/
+*.log
+.env
+.venv/
+venv/
+ENV/
+.mypy_cache/
+.pytest_cache/
+.coverage
+htmlcov/
+*.sqlite3
+
+# -------------------------
+# Node.js
+# -------------------------
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+package-lock.json
+yarn.lock
+.pnpm-lock.yaml
+.env
+dist/
+build/
+.cache/
+.next/
+out/
+coverage/
+*.tgz
+
+# -------------------------
+# Java Spring Boot
+# -------------------------
+target/
+*.class
+*.jar
+*.war
+*.ear
+*.iml
+*.log
+*.project
+*.classpath
+*.settings/
+.idea/
+.gradle/
+build/
+bin/
+.mvn/
+!src/main/resources/
+!src/main/java/
+!src/test/java/
+
+# -------------------------
+# OS / Editor files
+# -------------------------
+.DS_Store
