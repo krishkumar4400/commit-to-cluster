@@ -22,5 +22,8 @@ app.listen(port, () => {
  * docker build -t node-app .
  * docker run --rm --name=node-app  -e PORT=4040 -p 4040:4040  node-app
  * docker run --rm --name=node-app -p 4040:4040 -e PORT=4040 -e  NODE_ENV="development" node-app:v2
- *
+ *docker exec -it node-app sh
+ *docker exec -it node-app ls
+ *docker run -d --rm --name=node-app -p 4040:4040 --env-file .env node-app
+
  */
