@@ -1,0 +1,35 @@
+# Maven / Gradle build output
+target/*
+!target/app.jar
+build/
+
+# IDE files
+.idea/
+*.iml
+*.ipr
+*.iws
+.vscode/
+.project
+.classpath
+.settings/
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Logs and temp files
+*.log
+tmp/
+*.tmp
+
+# Git
+.git/
+.gitignore
+
+# Docker-related
+Dockerfile*
+docker-compose*.yml
+
+# Test reports
+surefire-reports/
+test-output/
