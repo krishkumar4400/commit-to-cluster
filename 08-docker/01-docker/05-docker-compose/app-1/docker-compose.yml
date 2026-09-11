@@ -1,0 +1,11 @@
+version: "3.8"
+name: "demo-app"
+
+services:
+  backend:
+    build: .
+    ports:
+      - "${PORT}:3000"
+    environment:
+      - PORT=${PORT}
+      - NODE_ENV:${NODE_ENV}
