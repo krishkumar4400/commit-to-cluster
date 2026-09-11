@@ -4,6 +4,8 @@ name: "demo-app"
 services:
   backend:
     build: .
+    image: krishkumar4400/node-demo
+    container_name: node-demo-container
     ports:
       - "${PORT}:3000"
     environment:
