@@ -11,9 +11,9 @@ services:
       - service-b
 
     environment:
-      - HOSTNAME=${HOSTNAME}
-      - TAX_SERVICE_URL=${TAX_SERVICE_URL}
-      - FRONTEND_URL=${FRONTEND_URL}
+      - HOSTNAME=service-a
+      - TAX_SERVICE_URL=http://service-b:4000
+      - FRONTEND_URL=http://localhost:5173
     networks:
       - tax-container
 
@@ -36,14 +36,13 @@ services:
       - "5173:5173"
 
     environment:
-      - VITE_API_URL=${VITE_API_URL}
+      - VITE_API_URL=http://localhost:3000
 
     depends_on: 
       - service-a
 
     networks:
       - tax-container
-
 
 networks:
   tax-container:
