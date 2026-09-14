@@ -1,0 +1,49 @@
+services:
+  service-a:
+    build: ./service-a
+    image: service-a
+    container_name: service-a
+
+    ports:
+      - "3000:3000"
+
+    depends_on:
+      - service-b
+
+    environment:
+      - HOSTNAME=${HOSTNAME}
+      - TAX_SERVICE_URL=${TAX_SERVICE_URL}
+      - FRONTEND_URL=${FRONTEND_URL}
+    networks:
+      - tax-container
+
+  service-b:
+    build: ./service-b
+    image: service-b
+    container_name: service-b
+
+    ports:
+      - "4000:4000"
+    networks:
+      - tax-container
+
+  service-c:
+    build: ./service-c
+    image: service-c
+    container_name: service-c 
+    
+    ports:
+      - "5173:5173"
+
+    environment:
+      - VITE_API_URL=${VITE_API_URL}
+
+    depends_on: 
+      - service-a
+
+    networks:
+      - tax-container
+
+
+networks:
+  tax-container:
