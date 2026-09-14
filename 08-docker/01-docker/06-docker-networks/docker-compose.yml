@@ -1,0 +1,71 @@
+version: "3.9"
+name: "web-app"
+
+services:
+  backend:
+    build: ./backend
+    image: krishkumar4400/backend:latest
+    container_name: backend-server
+    ports:
+      - "${PORT}:3000"
+
+    environment:
+      - PORT=${PORT}
+      - DB_URL=${DB_URL}
+      - NODE_ENV=${NODE_ENV}
+
+    networks:
+      - web-app-network
+
+    depends_on:
+      - postgres
+      - redis
+
+  postgres:
+    image: postgres:15.19-trixie
+    container_name: postgres
+    ports:
+      - "5434:5432"
+    environment:
+      - POSTGRES_USER=${POSTGRES_USER}
+      - POSTGRES_PASSWORD=${POSTGRES_USER}
+      - POSTGRES_DB=${POSTGRES_USER}
+
+    volumes:
+      - db-data:/var/lib/postgres-data
+
+    networks:
+      - web-app-network
+
+  nginx:
+    image: nginx:stable-alpine3.24-perl
+    container_name: nginx
+
+  redis:
+    image: redis:8.8.2-trixie
+    container_name: redis
+    ports:
+      - "6379:6379"
+
+    networks:
+      - web-app-network
+
+  frontend:
+    build: ./frontend
+    image: frontend
+    container_name: frontend
+    ports:
+      - "5173:5173"
+
+    environment:
+      - BACKEND_URI=${BACKEND_URI}
+
+    networks:
+      - web-app-network
+
+volumes:
+  db-data:
+
+networks:
+  web-app-network:
+    driver: bridge
