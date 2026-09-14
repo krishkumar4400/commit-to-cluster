@@ -1,0 +1,21 @@
+# Build artifacts you don't want re-copied
+.git
+.gitignore
+.github
+target/
+*.log
+
+# Local config — NEVER ship these
+.env
+.env.*
+application-local.yml
+application-local.properties
+
+# IDE noise
+.idea/
+*.iml
+.vscode/
+
+# OS noise
+.DS_Store
+Thumbs.db
