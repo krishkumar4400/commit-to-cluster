@@ -10,10 +10,9 @@ services:
     depends_on:
       - service-b
 
-    environment:
-      - HOSTNAME=service-a
-      - TAX_SERVICE_URL=http://service-b:4000
-      - FRONTEND_URL=http://localhost:5173
+    env_file:
+      - ./service-a/.env
+
     networks:
       - tax-container
 
@@ -30,15 +29,18 @@ services:
   service-c:
     build: ./service-c
     image: service-c
-    container_name: service-c 
-    
-    ports:
-      - "5173:5173"
+    container_name: service-c
 
+    ports:
+      - "5173:80"
+
+    # env_file:
+    #   - ./service-c/.env
     environment:
       - VITE_API_URL=http://localhost:3000
 
-    depends_on: 
+
+    depends_on:
       - service-a
 
     networks:
@@ -46,3 +48,4 @@ services:
 
 networks:
   tax-container:
+    driver: bridge
