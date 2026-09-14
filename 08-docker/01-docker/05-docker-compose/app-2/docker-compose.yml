@@ -1,0 +1,12 @@
+
+# Pulling on image from docker hub
+
+services:
+  backend:
+    image: krishkumar4400/node-demo
+    container_name: backend-server
+    ports:
+      - "${PORT}:3000"
+    environment:
+      - PORT=${PORT}
+      - NODE_ENV=${NODE_ENV}
