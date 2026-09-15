@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: spring-app-deployment
+  labels:
+    name: spring-app-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: spring-app
+  template:
+    metadata:
+      labels:
+        app: spring-app
+    spec:
+      containers:
+        - image: embarkx/hello-spring
+          name: spring-app
+          resources:
+            requests:
+              cpu: "200m"
+              memory: "200M"
+            limits:
+              cpu: "400m"
+              memory: "400M"
+          ports:
+            - containerPort: 8080
+              name: spring-app-port

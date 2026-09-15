@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: node-app-deployment
+  labels:
+    name: node-app-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: node-app
+  template:
+    metadata:
+      labels:
+        app: node-app
+    spec:
+      containers:
+        - image: embarkx/hello-node:latest
+          name: node-app
+          resources:
+            requests:
+              cpu: "200m"
+              memory: "200M"
+            limits:
+              cpu: "400m"
+              memory: "400M"
+          ports:
+            - containerPort: 3000
+              name: node-app-port

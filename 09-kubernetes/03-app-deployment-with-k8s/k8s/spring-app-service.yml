@@ -1,0 +1,13 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: spring-app-service
+spec:
+  selector:
+    app: spring-app
+  type: NodePort
+  ports:
+    - name: http
+      port: 82
+      targetPort: 8080
+      nodePort: 31002

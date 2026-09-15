@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: python-app-deployment
+  labels:
+    name: python-app-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: python-app
+  template:
+    metadata:
+      labels:
+        app: python-app
+    spec:
+      containers:
+        - image: embarkx/hello-python:latest
+          name: python-app
+          resources:
+            requests:
+              cpu: "200m"
+              memory: "200M"
+            limits:
+              cpu: "400m"
+              memory: "400M"
+          ports:
+            - containerPort: 4000
+              name: python-app-port
