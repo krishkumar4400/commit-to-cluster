@@ -1,0 +1,13 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: service-b
+spec:
+  selector:
+    app: service-b
+  type: NodePort
+  ports:
+    - name: http
+      port: 4000
+      targetPort: 4000
+      nodePort: 31001
