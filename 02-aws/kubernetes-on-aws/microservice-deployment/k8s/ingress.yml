@@ -1,0 +1,29 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: demo-app-ingress
+  annotations:
+    nginx.ingress.kubernetes.io/use-regex: "true"
+    nginx.ingress.kubernetes.io/rewrite-target: /$1
+  labels:
+    app.kubernetes.io/name: demo-app-ingress
+spec:
+  ingressClassName: nginx
+  rules:
+    - http:
+        paths:
+          - pathType: Prefix
+            path: /api/(.*)
+            backend:
+              service:
+                name: service-a
+                port:
+                  number: 80
+
+          - pathType: Prefix
+            path: /(.*)
+            backend:
+              service:
+                name: service-c
+                port:
+                  number: 80
