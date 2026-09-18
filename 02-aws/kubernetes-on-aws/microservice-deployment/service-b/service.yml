@@ -1,0 +1,12 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: service-b
+spec:
+  selector:
+    app: service-b
+  type: ClusterIP
+  ports:
+    - name: http
+      port: 4000
+      targetPort: 4000
