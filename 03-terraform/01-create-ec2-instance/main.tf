@@ -95,13 +95,13 @@ variable "instance_type" {
 variable "instance_name" {
   type        = string
   description = "EC2 Instance Name"
-  default = "demo-instance"
+  default     = "demo-instance"
 }
 
 variable "enable_monitoring" {
   type        = bool
   description = "EC2 Instance Enable Monitoring"
-  default = false
+  default     = false
 }
 
 resource "aws_instance" "demo-ec2-1" {
@@ -114,4 +114,15 @@ resource "aws_instance" "demo-ec2-1" {
     # Name = "terraform-demo-1"
     Name = var.instance_name
   }
+}
+
+# Output in Terraform
+output "ec2_public_ip" {
+  description = "This is the Public IP Address of EC2 Instance"
+  value = aws_instance.demo-ec2-1.public_ip
+  # sensitive = true
+}
+
+output "ec2_ami" {
+  value = aws_instance.demo-ec2-1.ami
 }
