@@ -119,7 +119,7 @@ resource "aws_instance" "demo-ec2-1" {
 # Output in Terraform
 output "ec2_public_ip" {
   description = "This is the Public IP Address of EC2 Instance"
-  value = aws_instance.demo-ec2-1.public_ip
+  value       = aws_instance.demo-ec2-1.public_ip
   # sensitive = true
 }
 
