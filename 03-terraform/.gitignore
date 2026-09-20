@@ -1,0 +1,31 @@
+# Local .terraform directory containing downloaded providers and modules
+.terraform/
+
+# .tfstate files contain the current state of your infrastructure, which
+# can include sensitive secrets. Use a remote backend instead of tracking these.
+*.tfstate
+*.tfstate.*
+
+# Crash log files
+crash.log
+crash.*.log
+
+# Exclude all variable files as they typically contain sensitive credentials/secrets
+*.tfvars
+*.tfvars.json
+
+# Ignore override files as they are usually used to override resources locally
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+
+# Ignore transient lock info files created by terraform apply
+.terraform.tfstate.lock.info
+
+# Include tfplan files to ignore the plan output of command: terraform plan -out=tfplan
+*tfplan*
+
+# Ignore CLI configuration files
+.terraformrc
+terraform.rc
