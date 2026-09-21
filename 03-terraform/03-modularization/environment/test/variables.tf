@@ -61,7 +61,7 @@ variable "s3_environment" {
 
 
 variable "aws_s3_versioning_enabled" {
-  type        = string
+  type        = bool
   description = "AWS S3 Version Enabled"
 }
 
