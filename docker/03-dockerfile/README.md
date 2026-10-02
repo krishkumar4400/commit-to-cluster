@@ -132,3 +132,13 @@ docker run -p 3000:3000 my-node-app
 docker run -p 3000:3000 my-node-app
 docker run --rm --name=node-app --env-file .env  -p 3000:3000 node-app:latest
 ```
+
+### debug commands
+
+```bash
+docker inspect
+docker logs
+docker exec
+docker top
+docker stats
+```
