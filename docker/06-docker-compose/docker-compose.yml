@@ -1,0 +1,53 @@
+version: "3.9"
+services:
+  frontend:
+    build: ./frontend
+    container_name: react-app
+    ports:
+      - "8080:80"
+    networks:
+      - mern-net
+    restart: always
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  backend:
+    build: ./backend
+    container_name: node-api
+    ports:
+      - "3000:3000"
+    env_file:
+      - ./backend/.env
+    networks:
+      - mern-net
+    depends_on:
+      - mongodb
+    restart: on-failure
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:3000/api/v1/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  mongodb:
+    image: mongo:6
+    container_name: mongodb
+    volumes:
+      - mongo-data:/data/db
+    networks:
+      - mern-net
+    restart: always
+    healthcheck:
+      test: ["CMD", "mongo", "--eval", "db.adminCommand('ping')"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+
+networks:
+  mern-net:
+
+volumes:
+  mongo-data:
