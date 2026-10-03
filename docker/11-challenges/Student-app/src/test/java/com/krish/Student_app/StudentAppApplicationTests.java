@@ -1,10 +1,10 @@
-package com.krish.RestDemo;
+package com.krish.Student_app;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class RestDemoApplicationTests {
+class StudentAppApplicationTests {
 
 	@Test
 	void contextLoads() {
