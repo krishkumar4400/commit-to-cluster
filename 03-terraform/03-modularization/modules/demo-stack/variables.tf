@@ -59,5 +59,5 @@ variable "s3_environment" {
 variable "aws_s3_versioning_enabled" {
   type        = bool
   description = "AWS S3 Bucket Versioning Enabled"
-  default = false
+  default     = false
 }

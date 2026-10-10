@@ -1,3 +1,5 @@
+# Terraform File Structure
+
 my-terraform-project/
 ├── main.tf          # Core infrastructure resource blocks
 ├── variables.tf     # Input variable declarations
