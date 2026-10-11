@@ -5,7 +5,7 @@ output "AWS_S3_Region" {
 
 output "AWS_DynamoDB_Region" {
   value       = aws_dynamodb_table.terraform_locks.region
-  description = "DynamoDB DynamoDb Region"
+  description = "DynamoDB Region"
 }
 
 output "s3_bucket_arn" {

@@ -26,7 +26,7 @@ resource "aws_s3_bucket" "demo-bucket" {
 }
 
 resource "aws_s3_bucket_versioning" "demo-bucket-versioning" {
-  count = var.aws_s3_bucket_versioning ? 1 : 0
+  count  = var.aws_s3_bucket_versioning ? 1 : 0
   bucket = aws_s3_bucket.demo-bucket.id
 
   versioning_configuration {

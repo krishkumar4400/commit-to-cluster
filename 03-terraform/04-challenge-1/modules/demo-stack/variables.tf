@@ -20,5 +20,5 @@ variable "aws_s3_bucket_name" {
 variable "aws_s3_bucket_versioning" {
   type        = bool
   description = "AWS S3 versioning Enabled"
-  default = false
+  default     = false
 }
